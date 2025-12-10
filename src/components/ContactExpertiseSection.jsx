@@ -1,5 +1,5 @@
 import styles from './ContactExpertiseSection.module.css';
-import quimicaImage from '../../images/ilustraçoes/quimica.png';
+import quimicaImage from '../../images/ilustracoes/quimica.png';
 
 export default function ContactExpertiseSection() {
   return (

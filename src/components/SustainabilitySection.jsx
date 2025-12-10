@@ -1,6 +1,6 @@
 import styles from './SustainabilitySection.module.css';
-import productImg from '../../images/ilustraçoes/produto.png';
-import gearsImg from '../../images/ilustraçoes/engrenagens.png';
+import productImg from '../../images/ilustracoes/produto.png';
+import gearsImg from '../../images/ilustracoes/engrenagens.png';
 
 export default function SustainabilitySection() {
   return (

@@ -1,4 +1,4 @@
-import premios from '../../images/ilustraçoes/premios.png';
+import premios from '../../images/ilustracoes/premios.png';
 
 export default function CertificationsSection() {
   return (

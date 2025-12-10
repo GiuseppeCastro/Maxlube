@@ -1,4 +1,4 @@
-import backgroundImage from '../../images/ilustraçoes/oleo2.png';
+import backgroundImage from '../../images/ilustracoes/oleo2.png';
 
 // A 2x version of this asset (oleo2@2x.png) also exists if higher resolution is needed.
 

@@ -1,9 +1,9 @@
 import styles from './ProcessSolutionsSection.module.css';
-import corteImg from '../../images/ilustraçoes/corte.png';
-import oleoImg from '../../images/ilustraçoes/oleo.png';
-import caixasImg from '../../images/ilustraçoes/caixas.png';
-import trabalhadorImg from '../../images/ilustraçoes/trabalhador.png';
-import maosImg from '../../images/ilustraçoes/maos.png';
+import corteImg from '../../images/ilustracoes/corte.png';
+import oleoImg from '../../images/ilustracoes/oleo.png';
+import caixasImg from '../../images/ilustracoes/caixas.png';
+import trabalhadorImg from '../../images/ilustracoes/trabalhador.png';
+import maosImg from '../../images/ilustracoes/maos.png';
 
 // @2x versions of these assets are available alongside the imports above.
 
