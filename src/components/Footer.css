@@ -1,0 +1,166 @@
+.footer {
+  width: 100%;
+  background: #ffffff;
+  border-top: 1px solid #1f73c7;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 20px 40px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #3a3f46;
+}
+
+.footer-main {
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.footer-column {
+  flex: 1 1 220px;
+  min-width: 220px;
+}
+
+.footer-products {
+  flex: 2 1 520px;
+}
+
+.footer-heading {
+  margin: 0 0 14px;
+  font-size: 20px;
+  font-weight: 800;
+  color: #30343a;
+}
+
+.footer-text {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #3e434a;
+}
+
+.footer-text-spaced {
+  margin-top: 16px;
+}
+
+.footer-products .footer-product-lists {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 32px;
+  row-gap: 12px;
+}
+
+.footer-product-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-product-list li {
+  font-size: 15px;
+  color: #3e434a;
+  line-height: 1.5;
+  position: relative;
+  padding-left: 14px;
+}
+
+.footer-product-list li::before {
+  content: "-";
+  position: absolute;
+  left: 0;
+  color: #3e434a;
+}
+
+.footer-links .footer-subheading {
+  margin: 0 0 18px;
+  font-weight: 800;
+  color: #30343a;
+}
+
+.footer-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-link {
+  color: #3e434a;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  margin-top: 30px;
+  padding-top: 16px;
+  border-top: 1px solid #e2e6ec;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: #6b717a;
+}
+
+.footer-bottom-text {
+  margin: 0;
+}
+
+.footer-bottom-right {
+  text-align: right;
+}
+
+.footer-bottom-link {
+  color: #3b5fa3;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 1px;
+}
+
+.footer-bottom-link:hover {
+  border-color: #3b5fa3;
+}
+
+@media (max-width: 900px) {
+  .footer-container {
+    padding: 40px 18px 36px;
+  }
+
+  .footer-main {
+    gap: 32px;
+  }
+
+  .footer-column {
+    flex-basis: 260px;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-products .footer-product-lists {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-container {
+    padding: 36px 16px 32px;
+  }
+
+  .footer-heading {
+    font-size: 18px;
+  }
+
+  .footer-product-list {
+    min-width: 180px;
+  }
+}

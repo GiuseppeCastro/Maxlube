@@ -1,0 +1,80 @@
+.certifications-section {
+  width: 100%;
+  background: #f8f9fb;
+  padding: 110px 20px 120px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.certifications-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.certifications-heading {
+  margin: 0;
+  color: #0056b8;
+  font-size: clamp(36px, 4vw, 48px);
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+}
+
+.certifications-text {
+  margin: 22px auto 0;
+  max-width: 840px;
+  color: #5f6368;
+  font-size: 17px;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+.certifications-image {
+  display: block;
+  margin: 40px auto 0;
+  width: 100%;
+  max-width: 780px;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 900px) {
+  .certifications-section {
+    padding: 90px 18px 100px;
+  }
+
+  .certifications-heading {
+    font-size: clamp(32px, 5vw, 42px);
+  }
+
+  .certifications-text {
+    font-size: 16px;
+    margin-top: 18px;
+  }
+
+  .certifications-image {
+    margin-top: 34px;
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 600px) {
+  .certifications-section {
+    padding: 72px 16px 84px;
+  }
+
+  .certifications-heading {
+    font-size: 30px;
+    line-height: 1.25;
+  }
+
+  .certifications-text {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .certifications-image {
+    margin-top: 28px;
+    max-width: 620px;
+  }
+}
