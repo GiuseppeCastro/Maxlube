@@ -3,7 +3,11 @@ import quimicaImage from '../../images/ilustracoes/quimica.png';
 
 export default function ContactExpertiseSection() {
   return (
-    <section className={styles['contact-expertise-section']} aria-labelledby="contact-expertise-heading">
+    <section
+      id="contatti"
+      className={styles['contact-expertise-section']}
+      aria-labelledby="contact-expertise-heading"
+    >
       <div className={styles['contact-expertise-card']}>
         <div className={styles['contact-expertise-image']}>
           <img src={quimicaImage.src} alt="Esperto di laboratorio" />

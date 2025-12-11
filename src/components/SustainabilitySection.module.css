@@ -185,3 +185,22 @@
     font-size: 16px;
   }
 }
+
+@media (max-width: 480px) {
+  .sustainability-section {
+    padding: 64px 14px;
+  }
+
+  .sustainability-heading {
+    font-size: 30px;
+  }
+
+  .sustainability-description {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .sustainability-list li {
+    font-size: 15px;
+  }
+}

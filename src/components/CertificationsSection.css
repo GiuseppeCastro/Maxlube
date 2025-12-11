@@ -78,3 +78,13 @@
     max-width: 620px;
   }
 }
+
+@media (max-width: 480px) {
+  .certifications-heading {
+    font-size: 26px;
+  }
+
+  .certifications-text {
+    font-size: 14px;
+  }
+}

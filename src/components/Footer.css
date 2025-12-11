@@ -164,3 +164,22 @@
     min-width: 180px;
   }
 }
+
+@media (max-width: 480px) {
+  .footer-container {
+    padding: 32px 14px 28px;
+  }
+
+  .footer-main {
+    gap: 26px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-bottom-right {
+    text-align: left;
+  }
+}

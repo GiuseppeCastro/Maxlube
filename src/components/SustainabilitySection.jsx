@@ -4,7 +4,11 @@ import gearsImg from '../../images/ilustracoes/engrenagens.png';
 
 export default function SustainabilitySection() {
   return (
-    <section className={styles['sustainability-section']} aria-labelledby="sustainability-heading">
+    <section
+      id="chi-siamo"
+      className={styles['sustainability-section']}
+      aria-labelledby="sustainability-heading"
+    >
       <div className={styles['sustainability-container']}>
         <div className={styles['sustainability-layout']}>
           <div className={styles['sustainability-images']}>

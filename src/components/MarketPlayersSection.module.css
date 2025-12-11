@@ -110,3 +110,26 @@
     margin-top: 40px;
   }
 }
+
+@media (max-width: 520px) {
+  .market-players {
+    padding: 64px 14px;
+  }
+
+  .market-players__heading {
+    font-size: 24px;
+  }
+
+  .market-players__subheading {
+    font-size: 15px;
+  }
+
+  .market-players__top-row {
+    gap: 24px;
+  }
+
+  .market-players__logo,
+  .market-players__logo img {
+    max-height: 58px;
+  }
+}

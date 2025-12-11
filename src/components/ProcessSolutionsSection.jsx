@@ -7,7 +7,11 @@ import maosImg from '../../images/ilustracoes/maos.png';
 
 export default function ProcessSolutionsSection() {
   return (
-    <section className={styles['process-solutions-section']} aria-labelledby="process-solutions-heading">
+    <section
+      id="prodotti"
+      className={styles['process-solutions-section']}
+      aria-labelledby="process-solutions-heading"
+    >
       <div className={styles['process-solutions-container']}>
         <h2 id="process-solutions-heading" className={styles['process-solutions-heading']}>
           Soluzioni per tutti
@@ -21,7 +25,7 @@ export default function ProcessSolutionsSection() {
           <div className={styles['process-card-large-group']}>
 
             {/* CARD 1 — corte.png (já tem texto na imagem → sem overlay) */}
-            <div className={styles['process-card-large']}>
+            <div className={styles['process-card-large']} id="fluidi-industriali">
               <img
                 src={corteImg.src}
                 alt="Fluidi industriali"
@@ -30,7 +34,7 @@ export default function ProcessSolutionsSection() {
             </div>
 
             {/* CARD 2 — oleo.png (não tem texto → overlay ativado) */}
-            <div className={styles['process-card-large']}>
+            <div className={styles['process-card-large']} id="trazione">
               <img
                 src={oleoImg.src}
                 alt="Trazione"
@@ -49,7 +53,7 @@ export default function ProcessSolutionsSection() {
 
         {/* BOTTOM SMALL CARDS */}
         <div className={styles['process-solutions-bottom-row']}>
-          <div className={styles['process-card-small']}>
+          <div className={styles['process-card-small']} id="materiali-per-imballaggi">
             <div className={styles['process-card-small__image-wrapper']}>
               <img
                 src={caixasImg.src}
@@ -64,7 +68,7 @@ export default function ProcessSolutionsSection() {
             </div>
           </div>
 
-          <div className={styles['process-card-small']}>
+          <div className={styles['process-card-small']} id="abbigliamento-e-antinfortunistica">
             <div className={styles['process-card-small__image-wrapper']}>
               <img
                 src={trabalhadorImg.src}
@@ -79,7 +83,7 @@ export default function ProcessSolutionsSection() {
             </div>
           </div>
 
-          <div className={styles['process-card-small']}>
+          <div className={styles['process-card-small']} id="igiene-personale-e-ambientale">
             <div className={styles['process-card-small__image-wrapper']}>
               <img
                 src={maosImg.src}

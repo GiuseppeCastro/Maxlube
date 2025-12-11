@@ -20,22 +20,31 @@ const features = [
 ];
 
 const productCategories = [
-  'Fluidi Industriali',
-  'Trazione',
-  'Materiali per imballaggi',
-  'Abbigliamento e antinfortunistica',
-  'Igiene personale e ambientale',
+  { label: 'Fluidi Industriali', href: '#fluidi-industriali' },
+  { label: 'Trazione', href: '#trazione' },
+  { label: 'Materiali per imballaggi', href: '#materiali-per-imballaggi' },
+  { label: 'Abbigliamento e antinfortunistica', href: '#abbigliamento-e-antinfortunistica' },
+  { label: 'Igiene personale e ambientale', href: '#igiene-personale-e-ambientale' },
+];
+
+const mobileMenuLinks = [
+  { label: 'Chi siamo', href: '#chi-siamo' },
+  { label: 'Prodotti', href: '#prodotti' },
+  ...productCategories,
+  { label: 'Contatti', href: '#contatti' },
 ];
 
 export default function HeroSection() {
   const [isSticky, setIsSticky] = useState(false);
   const [isProductsOpen, setIsProductsOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsSticky(window.scrollY > 40);
       if (window.scrollY > 120) {
         setIsProductsOpen(false);
+        setIsMobileMenuOpen(false);
       }
     };
 
@@ -46,6 +55,27 @@ export default function HeroSection() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 960 && isMobileMenuOpen) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [isMobileMenuOpen]);
+
+  useEffect(() => {
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileMenuOpen]);
+
+  const toggleMobileMenu = () => setIsMobileMenuOpen((open) => !open);
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
   const logoSrc = isSticky ? '/images/Logos/Logo Maxlube.png' : '/images/logo maxlube branca.png';
   const logoSrcSet = isSticky
@@ -92,8 +122,8 @@ export default function HeroSection() {
                 aria-label="Prodotti"
               >
                 {productCategories.map((item) => (
-                  <a key={item} className={styles.hero__dropdownItem} href="#prodotti" role="menuitem">
-                    <span>{item}</span>
+                  <a key={item.label} className={styles.hero__dropdownItem} href={item.href} role="menuitem">
+                    <span>{item.label}</span>
                     <span className={styles.hero__dropdownArrow} aria-hidden="true" />
                   </a>
                 ))}
@@ -103,10 +133,44 @@ export default function HeroSection() {
               Contatti
             </a>
           </nav>
+          <button
+            type="button"
+            className={`${styles.hero__menuToggle} ${isMobileMenuOpen ? styles['hero__menuToggle--open'] : ''}`}
+            aria-label={isMobileMenuOpen ? 'Chiudi il menu' : 'Apri il menu'}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="hero-mobile-menu"
+            onClick={toggleMobileMenu}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
           <div className={styles.hero__search} aria-hidden="true">
             <span className={styles['hero__search-icon']} />
           </div>
         </header>
+
+        <div
+          className={`${styles.hero__mobileBackdrop} ${isMobileMenuOpen ? styles['hero__mobileBackdrop--visible'] : ''}`}
+          onClick={closeMobileMenu}
+          aria-hidden="true"
+        />
+        <div
+          id="hero-mobile-menu"
+          className={`${styles.hero__mobileMenu} ${isMobileMenuOpen ? styles['hero__mobileMenu--visible'] : ''}`}
+        >
+          <nav className={styles.hero__mobileNav} aria-label="Navigazione mobile">
+            <ul className={styles.hero__mobileList}>
+              {mobileMenuLinks.map((item) => (
+                <li key={item.label}>
+                  <a className={styles.hero__mobileLink} href={item.href} onClick={closeMobileMenu}>
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
 
         <div className={styles.hero__content}>
           <div className={styles.hero__text}>
