@@ -5,8 +5,6 @@ import caixasImg from '../../images/ilustracoes/caixas.png';
 import trabalhadorImg from '../../images/ilustracoes/trabalhador.png';
 import maosImg from '../../images/ilustracoes/maos.png';
 
-// @2x versions of these assets are available alongside the imports above.
-
 export default function ProcessSolutionsSection() {
   return (
     <section className={styles['process-solutions-section']} aria-labelledby="process-solutions-heading">
@@ -17,28 +15,39 @@ export default function ProcessSolutionsSection() {
           i processi produttivi.
         </h2>
 
+        {/* TOP ROW */}
         <div className={styles['process-solutions-top-row']}>
-          <div className={styles['process-card-large']}>
-            <img src={corteImg.src} alt="Fluidi industriali" className={styles['process-card-large__image']} />
-            <div className={styles['process-card-large__overlay']}>
-              <div className={styles['process-card-large__title']}>Fluidi industriali</div>
-              <button type="button" className={styles['process-card-large__cta']}>
-                SCOPRI
-              </button>
-            </div>
-          </div>
+          {/* GROUP: um único card com duas imagens lado a lado */}
+          <div className={styles['process-card-large-group']}>
 
-          <div className={styles['process-card-large']}>
-            <img src={oleoImg.src} alt="Trazione" className={styles['process-card-large__image']} />
-            <div className={styles['process-card-large__overlay']}>
-              <div className={styles['process-card-large__title']}>Trazione</div>
-              <button type="button" className={styles['process-card-large__cta']}>
-                SCOPRI
-              </button>
+            {/* CARD 1 — corte.png (já tem texto na imagem → sem overlay) */}
+            <div className={styles['process-card-large']}>
+              <img
+                src={corteImg.src}
+                alt="Fluidi industriali"
+                className={styles['process-card-large__image']}
+              />
+            </div>
+
+            {/* CARD 2 — oleo.png (não tem texto → overlay ativado) */}
+            <div className={styles['process-card-large']}>
+              <img
+                src={oleoImg.src}
+                alt="Trazione"
+                className={styles['process-card-large__image']}
+              />
+
+              <div className={styles['process-card-large__overlay']}>
+                <div className={styles['process-card-large__title']}>Trazione</div>
+                <button type="button" className={styles['process-card-large__cta']}>
+                  SCOPRI
+                </button>
+              </div>
             </div>
           </div>
         </div>
 
+        {/* BOTTOM SMALL CARDS */}
         <div className={styles['process-solutions-bottom-row']}>
           <div className={styles['process-card-small']}>
             <div className={styles['process-card-small__image-wrapper']}>
@@ -86,6 +95,7 @@ export default function ProcessSolutionsSection() {
           </div>
         </div>
 
+        {/* CTA BUTTON */}
         <a className={styles['process-solutions-cta']} href="#catalogo">
           <span className={styles['process-solutions-cta__circle']}>
             <span className={styles['process-solutions-cta__arrow']} aria-hidden="true" />
