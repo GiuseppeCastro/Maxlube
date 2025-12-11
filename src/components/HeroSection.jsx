@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import styles from './HeroSection.module.css';
 
 const features = [
@@ -35,13 +35,24 @@ const mobileMenuLinks = [
 ];
 
 export default function HeroSection() {
+  const heroRef = useRef(null);
+  const navRef = useRef(null);
   const [isSticky, setIsSticky] = useState(false);
   const [isProductsOpen, setIsProductsOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const updateNavHeight = useCallback(() => {
+    if (heroRef.current && navRef.current) {
+      const navHeight = navRef.current.offsetHeight;
+      heroRef.current.style.setProperty('--nav-height', `${navHeight}px`);
+    }
+  }, []);
+
   useEffect(() => {
     const handleScroll = () => {
-      setIsSticky(window.scrollY > 40);
+      const sticky = window.scrollY > 40;
+      setIsSticky(sticky);
+      updateNavHeight();
       if (window.scrollY > 120) {
         setIsProductsOpen(false);
         setIsMobileMenuOpen(false);
@@ -54,18 +65,20 @@ export default function HeroSection() {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [updateNavHeight]);
 
   useEffect(() => {
     const handleResize = () => {
+      updateNavHeight();
       if (window.innerWidth > 960 && isMobileMenuOpen) {
         setIsMobileMenuOpen(false);
       }
     };
 
     window.addEventListener('resize', handleResize);
+    handleResize();
     return () => window.removeEventListener('resize', handleResize);
-  }, [isMobileMenuOpen]);
+  }, [isMobileMenuOpen, updateNavHeight]);
 
   useEffect(() => {
     document.body.style.overflow = isMobileMenuOpen ? 'hidden' : '';
@@ -73,6 +86,10 @@ export default function HeroSection() {
       document.body.style.overflow = '';
     };
   }, [isMobileMenuOpen]);
+
+  useEffect(() => {
+    updateNavHeight();
+  }, [isSticky, updateNavHeight]);
 
   const toggleMobileMenu = () => setIsMobileMenuOpen((open) => !open);
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
@@ -83,11 +100,11 @@ export default function HeroSection() {
     : '/images/logo maxlube branca.png 1x, /images/logo maxlube branca@2x.png 2x';
 
   return (
-    <section className={styles.hero}>
+    <section ref={heroRef} className={`${styles.hero} ${isSticky ? styles['hero--sticky'] : ''}`}>
       <div className={styles.hero__backdrop} aria-hidden="true" />
       <div className={styles.hero__inner}>
         {isSticky ? <div className={styles.hero__navSpacer} aria-hidden="true" /> : null}
-        <header className={`${styles.hero__nav} ${isSticky ? styles['hero__nav--sticky'] : ''}`}>
+        <header ref={navRef} className={`${styles.hero__nav} ${isSticky ? styles['hero__nav--sticky'] : ''}`}>
           <div className={styles.hero__logo}>
             <img
               src={logoSrc}

@@ -6,6 +6,10 @@
   --nav-height: 116px;
 }
 
+.hero--sticky {
+  --nav-height: 112px;
+}
+
 .hero *,
 .hero *::before,
 .hero *::after {
@@ -76,6 +80,7 @@
 .hero__nav--sticky .hero__logo img {
   height: 76px;
 }
+
 
 .hero__nav-links {
   display: flex;
@@ -220,8 +225,8 @@
   display: none;
   width: 44px;
   height: 44px;
-  border-radius: 50%;
-  border: 1px solid currentColor;
+  border: none;
+  border-radius: 0;
   background: transparent;
   align-items: center;
   justify-content: center;
@@ -230,6 +235,8 @@
   padding: 0;
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+  color: #ffffff;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.35));
 }
 
 .hero__menuToggle span {
@@ -520,7 +527,10 @@
     display: none;
   }
 
-  .hero__menuToggle,
+  .hero__menuToggle {
+    display: inline-flex;
+  }
+
   .hero__mobileMenu,
   .hero__mobileBackdrop {
     display: block;
@@ -552,6 +562,10 @@
     --nav-height: 92px;
   }
 
+  .hero--sticky {
+    --nav-height: 92px;
+  }
+
   .hero__inner {
     padding: 20px 20px 200px;
   }
@@ -577,6 +591,10 @@
 
 @media (max-width: 640px) {
   .hero {
+    --nav-height: 82px;
+  }
+
+  .hero--sticky {
     --nav-height: 82px;
   }
 
